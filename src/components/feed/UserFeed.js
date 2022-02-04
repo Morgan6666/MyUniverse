@@ -7,7 +7,7 @@ import {OS} from '../../utils/regex';
 import {Black, LightWhite} from '../../themes/constantColors';
 import {showCenterToast} from '../../utils/toast';
 import PixelRatio from 'react-native/Libraries/Utilities/PixelRatio';
-
+import Three_tochky from '../../navigators/CustomingThreeTochky';
 class UserFeed extends Component
 {
     constructor(props) {
@@ -94,7 +94,8 @@ class UserFeed extends Component
                 <TouchableWithoutFeedback onPress={this.showActionSheet}>
                     <View style={styles.optionView}>
                         <Circle></Circle>
-                        <FastImage resizeMode={FastImage.resizeMode.contain} style={styles.optionImage} source={theme.icons.options}/>
+                        <Three_tochky></Three_tochky>
+                        
                     </View>
                 </TouchableWithoutFeedback>
             </View>
@@ -149,8 +150,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         direction: 'ltr',
         padding: -140,
-        left: -342,
-        top: 260,
+        left: -337,
+        top: 160,
         transform: [{rotate: '90deg'}]
 
 
@@ -172,5 +173,18 @@ const styles = StyleSheet.create({
         bottom: '60.19%',
         alignItems: 'center',
 
+    },
+    three_tochky: {
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        direction: 'ltr',
+        padding: -140,
+        left: -337,
+        top: 160,
+        transform: [{rotate: '90deg'}]
+
     }
+
 });

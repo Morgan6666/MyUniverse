@@ -40,12 +40,12 @@ class followAndFollowingScreen extends Component {
             ]}>
                 <Tabs tabBarUnderlineStyle={{backgroundColor: theme.buttonRed, height: 2}} onChangeTab={this.onChangeTab}>
                     <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                        <Text style={{color: selectedIndex === 0 ? theme.buttonRed : theme.primaryColor}}>{`Followers`}</Text>
+                        <Text style={{color: selectedIndex === 0 ? theme.buttonRed : theme.primaryColor}}>{`Подписчики`}</Text>
                     </TabHeading>}>
                         <FollowUserTab title={'Подписчики'} theme={theme} data={followData} navigation={navigation} />
                     </Tab>
                     <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                        <Text style={{color: selectedIndex === 1 ? theme.buttonRed : theme.primaryColor}}>{`Following`}</Text>
+                        <Text style={{color: selectedIndex === 1 ? theme.buttonRed : theme.primaryColor}}>{`Подписки`}</Text>
                     </TabHeading>}>
                         <FollowUserTab title={'Подписки'} theme={theme} data={followingData} navigation={navigation} />
                     </Tab>

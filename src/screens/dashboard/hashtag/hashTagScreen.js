@@ -77,12 +77,12 @@ class hashTagScreen extends Component {
                     {this.renderHeader()}
                     <Tabs tabBarUnderlineStyle={{backgroundColor: theme.buttonRed, height: 2}} onChangeTab={this.onChangeTab}>
                         <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                            <Text style={{fontSize: 16, fontWeight: '500', color: selectedIndex === 0 ? theme.buttonRed : theme.primaryColor}}>TOP</Text>
+                            <Text style={{fontSize: 16, fontWeight: '500', color: selectedIndex === 0 ? theme.buttonRed : theme.primaryColor}}>Старые</Text>
                         </TabHeading>}>
                             <HashTagTopTab theme={theme} data={topData} navigation={navigation} />
                         </Tab>
                         <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                            <Text style={{fontSize: 16, fontWeight: '500', color: selectedIndex === 1 ? theme.buttonRed : theme.primaryColor}}>RECENT</Text>
+                            <Text style={{fontSize: 16, fontWeight: '500', color: selectedIndex === 1 ? theme.buttonRed : theme.primaryColor}}>Недавние</Text>
                         </TabHeading>}>
                             <HashTagRecentTab theme={theme} data={recentData} navigation={navigation} />
                         </Tab>

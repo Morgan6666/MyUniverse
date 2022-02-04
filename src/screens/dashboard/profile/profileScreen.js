@@ -16,6 +16,8 @@ import {rgbaColor} from 'react-native-reanimated/src/reanimated2/Colors';
 import Settings_iconic from '../../../navigators/CustomingSettings';
 import Custom_circle from '../../../navigators/CustomingCircleComponent';
 import {Circle} from 'react-native-svg';
+import Activity_iconic from '../../../navigators/CustomingTabActivity';
+import Camera_iconic from '../../../navigators/CustomingCamera';
 class profileScreen extends Component {
 
     static navigationOptions = ({navigation, route}) => {
@@ -26,10 +28,10 @@ class profileScreen extends Component {
         if (regex.isEmpty(route.params)) {
             header.headerRight = () => {
                 return <TouchableWithoutFeedback onPress={() => {
-                    navigation.navigate('Настройки')
+                    navigation.navigate('Setting')
                 }}>
                     <View style={styles.iconView}>
-                        <Custom_circle color ={styles.Circle_settings}></Custom_circle>
+
                    <Settings_iconic></Settings_iconic>
 
                     </View>
@@ -157,7 +159,7 @@ class profileScreen extends Component {
                                 Подписки
                             </Button>
                             <Button style={{fontSize: 14, color: theme.secondaryColor}}
-                                    containerStyle={[styles.button, {borderColor:'#85F7FE'}]}
+                                    containerStyle={[ {borderColor:' rgba(255, 255, 255, 0.3)'}]}
                                     onPress={() => {}}>
                                 Сообщения
                             </Button>
@@ -180,20 +182,12 @@ class profileScreen extends Component {
                     {this.renderUserInfo()}
                     <Tabs tabBarUnderlineStyle={{backgroundColor: theme.buttonRed, height: 2}} onChangeTab={this.onChangeTab}>
                         <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                            <FastImage
-                                resizeMode={FastImage.resizeMode.contain}
-                                style={styles.iconImage}
-                                source={selectedIndex === 0 ? theme.icons.selectedPost : theme.icons.post}
-                            />
+                            <Camera_iconic></Camera_iconic>
                             </TabHeading>}>
                                 <PostTab theme={theme} data={postData} navigation={navigation} />
                         </Tab>
                         <Tab heading={<TabHeading style={{backgroundColor: theme.container.backgroundColor}}>
-                            <FastImage
-                                resizeMode={FastImage.resizeMode.contain}
-                                style={styles.iconImage}
-                                source={selectedIndex === 1 ? theme.icons.selectedActivity : theme.icons.activity}
-                            />
+                            <Activity_iconic></Activity_iconic>
                             </TabHeading>}>
                             <LikeTab theme={theme} data={likeData} navigation={navigation} />
                         </Tab>

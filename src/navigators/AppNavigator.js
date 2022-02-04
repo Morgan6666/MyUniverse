@@ -94,14 +94,14 @@ class FeedStackScreenWrapper extends PureComponent {
 
         return (
             <FeedStack.Navigator screenOptions={loginNavigationOption(theme, navigationVisible)}>
-                <FeedStack.Screen name="Пу" component={feedScreen} options={feedScreen.navigationOptions} />
-                <FeedStack.Screen name="AddPost" component={addPost} options={addPost.navigationOptions} />
+                <FeedStack.Screen name="Feeds" component={feedScreen} options={feedScreen.navigationOptions} />
+                <FeedStack.Screen name="addPost" component={addPost} options={addPost.navigationOptions} />
                 <FeedStack.Screen name="Comment" component={commentsScreen} options={commentsScreen.navigationOptions} />
                 <FeedStack.Screen name="Like" component={viewsAndLikesScreen} options={viewsAndLikesScreen.navigationOptions} />
                 <FeedStack.Screen name="Stories" component={Stories3} options={Stories3.navigationOptions} />
                 <FeedStack.Screen name="OtherProfile" component={profileScreen} options={profileScreen.navigationOptions} />
                 <FeedStack.Screen name="FollowAndFollowing" component={followAndFollowingScreen} options={followAndFollowingScreen.navigationOptions} />
-                <FeedStack.Screen name="PostFeed" component={postFeedScreen} options={postFeedScreen.navigationOptions} />
+                <FeedStack.Screen name="AddPost" component={postFeedScreen} options={postFeedScreen.navigationOptions} />
                 <FeedStack.Screen name="HashTag" component={hashTagScreen} options={hashTagScreen.navigationOptions} />
             </FeedStack.Navigator>
         )
@@ -273,7 +273,7 @@ class AppNavigator extends React.PureComponent {
                                            showLabel: false,
                                            width: PixelRatio.getPixelSizeForLayoutSize(210),
                                            height: PixelRatio.getPixelSizeForLayoutSize(20),
-                                           top: Dimensions.get('window').height - PixelRatio.getPixelSizeForLayoutSize(160 / 2),
+                                           top: Dimensions.get('window').height - PixelRatio.getPixelSizeForLayoutSize(90 / 2),
                                            borderRadius: PixelRatio.getPixelSizeForLayoutSize(80),
                                            left: Dimensions.get('window').width - PixelRatio.getPixelSizeForLayoutSize(208),
                                            blurredView: {
@@ -316,6 +316,7 @@ class AppNavigator extends React.PureComponent {
 
                                            },
                                            borderColor: '#ad1313',
+
                                        }
                                    }
 
@@ -325,7 +326,7 @@ class AppNavigator extends React.PureComponent {
 
 
                       <Tab.Screen
-                          name="Дом"
+                          name="_"
                           color = {styles.iconImage}
                           component={FeedStackScreen}
                           options={{
@@ -336,21 +337,21 @@ class AppNavigator extends React.PureComponent {
                           ),
                       }}/>
 
-                        <Tab.Screen name="Чат" component={MessageStackScreen} options={{
+                        <Tab.Screen name="__" component={MessageStackScreen} options={{
                             tabBarIcon: ({ color, size }) => (
                                 <View style = {styles.Search_style}>
                                 <Search_iconic/>
                                 </View>
                             ),
                         }}/>
-                        <Tab.Screen name="Активность" component={NotificationStackScreen}  options={{
+                        <Tab.Screen name="___" component={NotificationStackScreen}  options={{
                             tabBarIcon: ({ color, size }) => (
                                 <View style = {styles.Activity_styles}>
                                 <Activity_iconic/>
                                 </View>
                             ),
                         }}/>
-                        <Tab.Screen name = 'Профиль' component={ProfileStackScreen} options={{
+                        <Tab.Screen name = '____' component={ProfileStackScreen} options={{
                             tabBarIcon: ({ color, size }) => (
                                 <View style = {styles.Profile_styles}>
                                 <Profile_iconic></Profile_iconic>

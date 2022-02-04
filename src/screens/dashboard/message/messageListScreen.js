@@ -9,17 +9,23 @@ import FastImage from 'react-native-fast-image';
 import {getStore} from '../../../../App';
 import Feather from 'react-native-vector-icons/Feather';
 import {Icon, Input, Item} from 'native-base';
-
+import Search_iconic from '../../../navigators/CustomingTabSearchNavigator';
+import PixelRatio from 'react-native/Libraries/Utilities/PixelRatio';
+import Krest_iconic from '../../../navigators/CustomingKrest';
+import Custom_circle from '../../../navigators/CustomingCircleComponent';
+import {Circle} from 'react-native-svg';
+import Custom_bucket from '../../../navigators/CustomuingBucket';
 class messageListScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'Message',
+            title: 'Сообщения',
             headerRight: () => {
                 return <TouchableWithoutFeedback onPress={() => {navigation.navigate('NewMessage')}}>
-                    <View style={{paddingLeft: 15, paddingRight: 15}}>
+                    <View style={{paddingLeft: -2, paddingRight: 30}}>
                         <View style={styles.iconView}>
-                            <Feather name="edit" size={25} color={getStore.getState().auth.theme.primaryColor} />
+                            <Circle></Circle>
+                           <Krest_iconic></Krest_iconic>
                         </View>
                     </View>
                 </TouchableWithoutFeedback>
@@ -43,7 +49,7 @@ class messageListScreen extends Component {
             <View style={styles.rowBack}>
                 <TouchableOpacity style={[styles.backRightBtn, styles.backRightBtnRight]}
                                   onPress={() => rowMap[data.item.messageId].closeRow()}>
-                    <FastImage resizeMode={FastImage.resizeMode.contain} style={styles.iconImage} source={theme.icons.delete}/>
+                    <Custom_bucket></Custom_bucket>
                 </TouchableOpacity>
             </View>
         )
@@ -64,9 +70,12 @@ class messageListScreen extends Component {
                     ListHeaderComponent={() => {
                         return (
                             <View style={{padding: 15, paddingLeft: 15}}>
-                                <Item style={[styles.inputItem, {borderColor: theme.secondaryColor}]}>
-                                    <Icon name="ios-search" style={{color: theme.secondaryColor, fontSize: 20, marginTop: 5}} />
-                                    <Input placeholder="Search" placeholderTextColor={theme.secondaryColor} style={{fontSize: 15, color: theme.secondaryColor}} />
+                                <Item style={[styles.inputItem, {borderColor: 'rgba(169,170,171,0.38)',borderRadius: 50}]}>
+                                    <Search_iconic></Search_iconic>
+                                    <Input placeholder="Поиск" placeholderTextColor={theme.secondaryColor} style={{
+                                        fontSize: 15, color: theme.secondaryColor,borderRadius: 50
+
+                                    }} />
                                 </Item>
                             </View>
                         )

@@ -123,7 +123,7 @@ class addPost extends React.Component
                 <View style={styles.innerContainer}>
                     <TextInput
                         style={[styles.input, {borderColor: theme.secondaryColor, color: theme.primaryColor}]}
-                        placeholder={' Добавить пост...'}
+                        placeholder={' Write a caption...'}
                         placeholderTextColor={theme.secondaryColor}
                         multiline
                         onChangeText={description => this.onChangeText(description)}

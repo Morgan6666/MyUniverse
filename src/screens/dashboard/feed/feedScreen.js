@@ -16,6 +16,7 @@ class feedScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
+            title: 'Публикации',
 
             headerLeft: () => {
                 return <View style={{paddingLeft: 15, paddingRight: 15}}>
@@ -30,7 +31,7 @@ class feedScreen extends Component {
                 return <View style={{paddingLeft: 15, paddingRight: 15}}>
                     <TouchableWithoutFeedback onPress={() => navigation.push('AddPost')}>
                         <View style={styles.iconView}>
-                            <Chat_iconic></Chat_iconic>
+                            <Chat_iconic/>
                         </View>
                     </TouchableWithoutFeedback>
                 </View>

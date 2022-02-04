@@ -10,7 +10,7 @@ class viewsAndLikesScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'Views and Likes',
+            title: 'Количество  лайков',
         }
     };
 
@@ -46,8 +46,8 @@ class viewsAndLikesScreen extends Component {
                     <Text style={[styles.textView, {color: theme.primaryColor}]}>{`${views} Views`}</Text>
                 </View>}
                 {item.viewCount !== 0 && <View style={[styles.likeView, {borderColor: theme.secondaryColor}]}>
-                    <Text style={[styles.textLike, {color: theme.secondaryColor}]}>{`LIKED BY`}</Text>
-                    <Text style={[styles.countLikeText,{color: theme.secondarySColor}]}>{`2003 likes`}</Text>
+                    <Text style={[styles.textLike, {color: theme.secondaryColor}]}>{`Лайкните`}</Text>
+                    <Text style={[styles.countLikeText,{color: theme.secondarySColor}]}>{`2003 лайко`}</Text>
                 </View>}
             </View>
         )

@@ -11,7 +11,7 @@ class notificationScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'Activity',
+            title: 'Мероприятия',
         }
     };
 
@@ -41,7 +41,7 @@ class notificationScreen extends Component {
                ListHeaderComponent={() => {
                   return (
                       <View style={{padding: 15, paddingLeft: 15}}>
-                          <Text style={{fontSize: 15, fontWeight: '600', color: theme.primaryColor}}>Suggestion for you</Text>
+                          <Text style={{fontSize: 15, fontWeight: '600', color: theme.primaryColor}}>Предложение для вас</Text>
                       </View>
                   )
                }}

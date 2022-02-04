@@ -26,10 +26,10 @@ export const THEMES = [
     primaryAlphaColor: WhiteAlpha,
     secondaryColor: LightWhite,
     secondarySColor: LLightWhite,
-    buttonRed: '#85F7FE',
-    followColor: '#85F7FE',
-    followingColor: '#85F7FE',
-    onlineColor: '#85F7FE',
+    //buttonRed: '#85F7FE',
+    //followColor: '#85F7FE',
+    //followingColor: '#85F7FE',
+    //onlineColor: '#85F7FE',
     linkColor: DARKLINK,
     icons: {
       back: require('./../assets/dark/back.png'),
@@ -62,7 +62,7 @@ export const THEMES = [
     }
   },
   {
-    key: 'rgba(138,142,150,0.31)',
+    //key: 'rgba(138,142,150,0.31)',
     gradientColors: ['#85F7FE', '#91E0FA', '#A4BBF3', '#BB8FEC', '#81FFFF'],
     gradientTransparentColors: ['transparent', 'transparent'],
     container: {

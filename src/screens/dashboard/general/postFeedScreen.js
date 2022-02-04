@@ -7,8 +7,8 @@ import Button from '../../../components/general/Button';
 
 class postFeedScreen extends Component {
 
-    static navigationOptions = ({navigation, route}) => {
-        let type = route.params.type;
+     static navigationOptions = ({navigation: navigation, route}) => {
+        let type = route.params;
         if (type === 'hashTag') {
             let {theme} =  getStore.getState().auth;
             let color = theme.primaryColor;
@@ -25,7 +25,7 @@ class postFeedScreen extends Component {
             }
         } else {
             return {
-                title: 'Сообщения',
+                title: 'Посты',
             }
         }
     };
@@ -33,7 +33,7 @@ class postFeedScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: props.route.params.data
+            data: props.route.data
         }
     }
 

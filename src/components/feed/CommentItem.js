@@ -102,7 +102,7 @@ class CommentItem extends Component
                     { viewReplyCount
                         ? <Text style={[styles.timeText, {fontWeight: '400', color: theme.secondaryColor}]}
                                 onPress={() => {this.setState({viewReplyCount: false})}}>
-                            {`----- View replies (${item.replays.length})`}
+                            {`Посмотреть ответы (${item.replays.length})`}
                         </Text>
                         : <View>
                             <FlatList
@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
     commentView: {
         flex: 1,
         flexDirection: 'row',
+
     },
     userView: {
         flex: 1,

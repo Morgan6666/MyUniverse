@@ -92,7 +92,7 @@ class editProfileScreen extends Component {
             let value = this[name].value();
 
             if (!value) {
-                errors[name] = 'Не делжно быть пустым';
+                errors[name] = 'Не должно быть пустым';
             } else {
             }
         });

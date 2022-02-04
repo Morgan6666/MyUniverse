@@ -8,7 +8,7 @@ class messageScreen extends React.Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'Message',
+            title: 'Сообщения',
         }
     };
 
@@ -24,7 +24,7 @@ class messageScreen extends React.Component {
             messages: [
                 {
                     _id: 1,
-                    text: 'Hello developer',
+                    text: 'Привет',
                     createdAt: new Date(),
                     user: {
                         _id: 2,
@@ -72,7 +72,7 @@ class messageScreen extends React.Component {
                         return (
                             <InputToolbar
                                 {...props}
-                                containerStyle={{backgroundColor: theme.container.backgroundColor}}
+                                containerStyle={{backgroundColor: "#FFFFFF"}}
                             />
                         )
                     }}
@@ -92,7 +92,7 @@ export default connect(mapStateToProps)(messageScreen);
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 10,
     },
     textInput: {
        fontSize: 14,

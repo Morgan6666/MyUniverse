@@ -126,6 +126,7 @@ class loginScreen extends Component {
           scrollEnabled={false}>
           <View style={styles.innerViewContainer}>
             <Title theme={theme} title={'Войти'} />
+            <Button style={[styles.button_style, {color: "#b61e1e"}]}>
             <TextField
               ref={this.emailRef}
               textColor={theme.primaryColor}
@@ -144,6 +145,7 @@ class loginScreen extends Component {
               label="Email"
               error={errors.email}
             />
+            </Button>
             <TextField
               ref={this.passwordRef}
               textColor={theme.primaryColor}
@@ -185,9 +187,8 @@ class loginScreen extends Component {
               containerStyle={[
                 styles.loginButton,
                 {backgroundColor: 'rgba(190,215,215,0.1)',
-                shadowColor: 'rgba(55,124,185,0.5)',
-                  shadowOpacity: PixelRatio.getPixelSizeForLayoutSize(7.91129),
-                  borders: 'rgba(213,17,17,0.2)'
+
+
 
                 },
               ]}
@@ -211,11 +212,19 @@ export default connect(mapStateToProps)(loginScreen);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"rgba(208,205,205,0.75)",
+    borderRadius: 20,
+    padding: 40
+
+
   },
   innerViewContainer: {
     flex: 1,
-    padding: 12,
-    paddingTop: 8,
+    padding: 10,
+    paddingTop: -25,
+    backgroundColor: '#bcbec0',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    height: 40
   },
   forgotView: {
     flexDirection: 'row',
@@ -256,7 +265,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   button_style: {
-    backgroundColor: 'rgba(79,66,66,0.83)',
+    backgroundColor: 'rgba(206,21,21,0.83)',
     borderRadius: PixelRatio.getPixelSizeForLayoutSize(35),
     shadowColor: rgbaColor(144,166,187,0.5)
   }

@@ -12,7 +12,7 @@ class settingScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'Настройки',
+            title: ' Настройки',
         }
     };
 
@@ -21,25 +21,25 @@ class settingScreen extends Component {
         this.state = {
             data: [{
                 id: 1,
-                name: 'Edit Profile',
+                name: 'Редактирвоать профиль',
             },{
                 id: 2,
-                name: 'Change Password',
+                name: 'Изменить пароль',
             },{
                 id: 3,
-                name: 'Theme Dark',
+                name: 'Тёмная тема',
             },{
                 id: 4,
-                name: 'Get Help',
+                name: 'Получить помощь',
             },{
                 id: 5,
-                name: 'Report Problems',
+                name: 'Сообщить о проблеме',
             },{
                 id: 6,
-                name: 'Terms of Use',
+                name: 'Пользовательское соглашение',
             },{
                 id: 7,
-                name: 'Log out',
+                name: 'Выйти',
             }],
         }
     }

@@ -6,12 +6,12 @@ import {Red} from '../../../themes/constantColors';
 import FollowAndFollowingItem from '../../../components/general/FollowAndFollowingItem';
 import {Icon, Input, Item} from 'native-base';
 import {getStore} from '../../../../App';
-
+import Search_iconic from '../../../navigators/CustomingTabSearchNavigator';
 class createNewMessageScreen extends Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: 'New Message',
+            title: 'Новое сообщение',
             headerRight: () => {
                 return <TouchableWithoutFeedback onPress={() => {
                     navigation.pop();
@@ -20,7 +20,7 @@ class createNewMessageScreen extends Component {
                     <View style={{paddingLeft: 15, paddingRight: 15}}>
                         <View style={styles.iconView}>
                             <Text style={[{fontSize: 16, fontWeight: '600',color: getStore.getState().auth.theme.followColor}]}>
-                                {'Chat'}
+                                {'Комнаты'}
                             </Text>
                         </View>
                     </View>
@@ -64,10 +64,11 @@ class createNewMessageScreen extends Component {
                         return (
                             <View style={{padding: 15, paddingLeft: 15}}>
                                 <Item style={[styles.inputItem, {borderColor: theme.secondaryColor}]}>
-                                    <Icon name="ios-search" style={{color: theme.secondaryColor, fontSize: 20, marginTop: 5}} />
-                                    <Input placeholder="Search" placeholderTextColor={theme.secondaryColor} style={{fontSize: 15, color: theme.secondaryColor}} />
+                                    <Search_iconic></Search_iconic>
+                                    <Input placeholder="Search" placeholderTextColor={theme.secondaryColor} style={{
+                                        fontSize: 15, color: theme.secondaryColor,borderRadius: 50 }}/>
                                 </Item>
-                                <Text style={{fontSize: 15, fontWeight: '600', color: theme.primaryColor}}>Suggested</Text>
+                                <Text style={{fontSize: 15, fontWeight: '600', color: theme.primaryColor}}></Text>
                             </View>
                         )
                     }}
