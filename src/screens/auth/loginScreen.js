@@ -184,14 +184,7 @@ class loginScreen extends Component {
             </View>
             <Button
               style={{fontSize: 15, color: White}}
-              containerStyle={[
-                styles.loginButton,
-                {backgroundColor: 'rgba(190,215,215,0.1)',
 
-
-
-                },
-              ]}
               onPress={() => this.onSubmit()}>
               Войти
             </Button>
