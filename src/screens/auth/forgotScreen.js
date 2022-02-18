@@ -1,10 +1,21 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio, TextInput, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  Text,
+  PixelRatio,
+  TextInput,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import {TextField} from 'react-native-material-textfield';
 import Button from '../../components/general/Button';
 import {connect} from 'react-redux';
 import {White} from '../../themes/constantColors';
 import Title from '../../components/general/Title';
+import Exit_iconic from '../../navigators/CustomExit';
 
 class forgotPassword extends Component {
   constructor(props) {
@@ -47,6 +58,11 @@ class forgotPassword extends Component {
           contentContainerStyle={styles.innerViewContainer}
           scrollEnabled={false}>
           <View style={styles.innerViewContainer}>
+            <ImageBackground source={require('../../assets/images_2/circle_3.png')} style = {styles.kr_button}>
+              <View style = {styles.exit}>
+                <Exit_iconic></Exit_iconic>
+              </View>
+            </ImageBackground>
             <Title theme={theme}  />
             <Text
               style={{
@@ -179,6 +195,18 @@ const styles = StyleSheet.create({
     borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
     borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
     left: PixelRatio.getPixelSizeForLayoutSize(-6.5)
+
+  },
+  exit: {
+    top:PixelRatio.getPixelSizeForLayoutSize(4),
+    left: PixelRatio.getPixelSizeForLayoutSize(6.5)
+
+  },
+  kr_button: {
+    width: 60,
+    height: 50,
+    left: -6,
+    top: -21
 
   }
 });

@@ -1,5 +1,14 @@
 import React, {Component, useState } from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  Text,
+  PixelRatio,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import {TextField} from 'react-native-material-textfield';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/general/Button';
@@ -10,6 +19,7 @@ import Title from '../../components/general/Title';
 import {regex} from '../../utils/regex';
 import DatePicker from './DatePicker';
 import {TextInput} from 'react-native';
+import Exit_iconic from '../../navigators/CustomExit';
 
 let formField = ['email', 'password', 'login', 'number', 'date'];
 
@@ -141,7 +151,14 @@ class registerScreen extends Component {
           scrollEnabled={true}>
 
 
+
           <View style={styles.innerViewContainer}>
+
+            <ImageBackground source={require('../../assets/images_2/circle_3.png')} style = {styles.kr_button}>
+              <View style = {styles.exit}>
+                <Exit_iconic></Exit_iconic>
+              </View>
+            </ImageBackground>
 
             <TextInput
                 style = {styles.text_input_1}
@@ -382,4 +399,16 @@ const styles = StyleSheet.create({
 
 
   },
+  exit: {
+    top:PixelRatio.getPixelSizeForLayoutSize(4),
+    left: PixelRatio.getPixelSizeForLayoutSize(6.5)
+
+  },
+  kr_button: {
+    width: 60,
+    height: 50,
+    left: -6,
+    top: -21
+
+  }
 });
