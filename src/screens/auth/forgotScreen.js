@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio, TextInput, TouchableOpacity} from 'react-native';
 import {TextField} from 'react-native-material-textfield';
 import Button from '../../components/general/Button';
 import {connect} from 'react-redux';
@@ -47,7 +47,7 @@ class forgotPassword extends Component {
           contentContainerStyle={styles.innerViewContainer}
           scrollEnabled={false}>
           <View style={styles.innerViewContainer}>
-            <Title theme={theme} title={'Забыли пароль?'} />
+            <Title theme={theme}  />
             <Text
               style={{
                 marginTop: 20,
@@ -56,36 +56,42 @@ class forgotPassword extends Component {
                 fontWeight: '600',
                 color: theme.secondaryColor,
               }}>
-              Пожалуйста введите адресс электронной почты и следуйте инструкции
-                  восстановления вашего пароля
+
             </Text>
-            <TextField
-              ref={this.emailRef}
-              textColor={theme.primaryColor}
-              tintColor={theme.primaryColor}
-              baseColor={theme.primaryAlphaColor}
-              errorColor={theme.buttonRed}
-              fontSize={14}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              enablesReturnKeyAutomatically={true}
-              returnKeyType="next"
-              label="Email"
-              error={errors.email}
+            <TextInput
+                style = {styles.forgot_email}
+                placeholderStyle = {styles.placeholder}
+                ref={this.passwordRef}
+                textColor={theme.primaryColor}
+                tintColor={theme.primaryColor}
+                baseColor={theme.primaryAlphaColor}
+                errorColor={theme.buttonRed}
+                fontSize={14}
+                autoCapitalize="none"
+                autoCorrect={false}
+                enablesReturnKeyAutomatically={true}
+                clearTextOnFocus={true}
+                onFocus={this.onFocus}
+                onChangeText={this.onChangeText}
+                onSubmitEditing={this.onSubmitPassword}
+                returnKeyType="done"
+
+
+                placeholder={'Электронная почта'}
+                // title="Choose wisely"
+                // maxLength={30}
+                // characterRestriction={20}
+                renderRightAccessory={this.renderPasswordAccessory}
+
             />
-            <Button
-              style={{fontSize: 15, color: White}}
-              containerStyle={[
-                styles.loginButton,
-                {backgroundColor: 'rgba(190,215,215,0.1)',
-                  shadowColor: 'rgba(55,124,185,0.5)',
-                  shadowOpacity: PixelRatio.getPixelSizeForLayoutSize(7.91129),
-                  borders: 'rgba(213,17,17,0.2)'},
-              ]}
-              onPress={() => this.onSubmit()}>
-              Отправить
-            </Button>
+            <TouchableOpacity
+                style = {styles.submit_button}>
+
+              <Button
+                  onPress={() => this.onSubmit()}>
+                Отправить
+              </Button>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -103,6 +109,26 @@ export default connect(mapStateToProps)(forgotPassword);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"#982c2c",
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(80),
+
+    width: PixelRatio.getPixelSizeForLayoutSize(201),
+    height: PixelRatio.getPixelSizeForLayoutSize(400),
+    left: PixelRatio.roundToNearestPixel(-20),
+    borderTopEndRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomLeftRadius: PixelRatio.getPixelSizeForLayoutSize(65),
+    borderBottomRightRadius: PixelRatio.getPixelSizeForLayoutSize(100),
+    top: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopStartRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(40),
+    marginBottom: PixelRatio.getPixelSizeForLayoutSize(22),
+    marginVertical: PixelRatio.getPixelSizeForLayoutSize(-17),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(500),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    marginLeft:PixelRatio.getPixelSizeForLayoutSize(13)
+
   },
   innerViewContainer: {
     flex: 1,
@@ -117,4 +143,42 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  forgot_email: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(129),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+    left: PixelRatio.getPixelSizeForLayoutSize(-6)
+
+
+  },
+  submit_button:{
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 336,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:11,
+    shadowColor: 'rgba(255,255,255,0.94)',
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    left: PixelRatio.getPixelSizeForLayoutSize(-6.5)
+
+  }
 });

@@ -66,15 +66,15 @@ export const THEMES = [
     gradientColors: ['#85F7FE', '#91E0FA', '#A4BBF3', '#BB8FEC', '#81FFFF'],
     gradientTransparentColors: ['transparent', 'transparent'],
     container: {
-      backgroundColor: '#ECEEF0',
+      backgroundColor: 'rgba(18,18,19,0.08)',
       headerTextColor: Black,
       overflow: ' visible',
       padding:100,
       shadowOpacity: PixelRatio.getPixelSizeForLayoutSize(1000)
 
     },
-    backgroundColor: 'rgba(255,255,255,0.3)',
-    shadowColor: 'rgba(144,166,187,0.5)',
+    backgroundColor: '#c70e0e',
+    shadowColor: 'rgb(253,243,243)',
     shadowOpacity: PixelRatio.getPixelSizeForLayoutSize(1000),
 
 
@@ -82,7 +82,7 @@ export const THEMES = [
 
     primaryColor: Black,
     primaryAlphaColor: BlackAlpha,
-    secondaryColor: LightBlack,
+    secondaryColor: 'rgb(253,243,243)',
     secondarySColor: LLightBlack,
     buttonRed: Red,
     followColor: Red,

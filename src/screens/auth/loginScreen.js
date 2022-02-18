@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, PixelRatio} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  PixelRatio,
+  TextInput,
+  Pressable,
+  TouchableOpacity, ImageBackground,
+} from 'react-native';
 import {TextField} from 'react-native-material-textfield';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/general/Button';
@@ -9,7 +18,12 @@ import SocialView from '../../components/general/SocialView';
 import Title from '../../components/general/Title';
 import {regex} from '../../utils/regex';
 import {rgbaColor} from 'react-native-reanimated/src/reanimated2/Colors';
+import Circle_iconic from '../../navigators/CustomingCircle';
+import Exit_iconic from '../../navigators/CustomExit';
+import  Custom_circle from '../../navigators/CustomingCircle';
 
+import {LinearGradient} from 'react-native-svg';
+import {Text} from 'native-base';
 class loginScreen extends Component {
   constructor(props) {
     super(props);
@@ -72,6 +86,9 @@ class loginScreen extends Component {
   onForgotSubmit() {
     this.props.navigation.navigate('Forgot')
   }
+  onRegisterSubmit(){
+    this.props.navigation.navigate('Register')
+  }
 
   onSubmit() {
     // let errors = {};
@@ -114,6 +131,9 @@ class loginScreen extends Component {
   render() {
     let {errors = {}, secureTextEntry} = this.state;
     const {theme, navigation} = this.props;
+    const Circle_message = () => {
+      return <View style = {styles.circle}/>
+    }
 
     return (
       <SafeAreaView
@@ -124,14 +144,26 @@ class loginScreen extends Component {
         <ScrollView
           contentContainerStyle={styles.innerViewContainer}
           scrollEnabled={false}>
+
           <View style={styles.innerViewContainer}>
-            <Title theme={theme} title={'Войти'} />
+            <ImageBackground source={require('../../assets/images_2/circle_3.png')} style = {styles.kr_button}>
+              <View style = {styles.exit}>
+                <Exit_iconic></Exit_iconic>
+              </View>
+            </ImageBackground>
+
+
+
+
+
+            <Title theme={theme}  />
             <Button style={[styles.button_style, {color: "#b61e1e"}]}>
-            <TextField
+            <TextInput
+                style = {styles.text_input_1}
               ref={this.emailRef}
               textColor={theme.primaryColor}
               tintColor={theme.primaryColor}
-              baseColor={theme.primaryAlphaColor}
+
               errorColor={theme.buttonRed}
               fontSize={14}
               keyboardType="email-address"
@@ -143,10 +175,13 @@ class loginScreen extends Component {
               onSubmitEditing={this.onSubmitEmail}
               returnKeyType="next"
               label="Email"
+              placeholder={'Электронная почта'}
               error={errors.email}
             />
             </Button>
-            <TextField
+            <TextInput
+                style = {styles.text_input_2}
+                placeholderStyle = {styles.placeholder}
               ref={this.passwordRef}
               textColor={theme.primaryColor}
               tintColor={theme.primaryColor}
@@ -162,33 +197,46 @@ class loginScreen extends Component {
               onChangeText={this.onChangeText}
               onSubmitEditing={this.onSubmitPassword}
               returnKeyType="done"
-              label="Пароль"
-              error={errors.password}
+
+
+              placeholder={'Пароль'}
               // title="Choose wisely"
               // maxLength={30}
               // characterRestriction={20}
               renderRightAccessory={this.renderPasswordAccessory}
-            />
-            <View style={styles.forgotView}>
-              <Button
-                style={[styles.forgotText, {color: theme.primaryColor}]}
-                containerStyle={styles.forgotButton}
-                onPress={() => this.onForgotSubmit()}
-              />
-              <Button
-                style={[styles.forgotText, {color: theme.primaryColor}]}
-                containerStyle={styles.forgotButton}
-                onPress={() => this.onForgotSubmit()}>
-                Забыли пароль?
-              </Button>
-            </View>
-            <Button
-              style={{fontSize: 15, color: White}}
 
+            />
+            <TouchableOpacity
+                style = {styles.register_button}
+                onPress={() => this.onForgotSubmit()}
+            >
+              <Button
+
+                onPress={() => this.onRegisterSubmit()}
+
+              >
+                Зарегистрироваться
+              </Button>
+          </TouchableOpacity>
+            <TouchableOpacity style = {styles.forgot_button}>
+
+              <Button
+                onPress={() => this.onForgotSubmit()}>
+                Забыли пароль?</Button>
+
+            </TouchableOpacity>
+          <TouchableOpacity
+            style = {styles.enter}>
+
+            <Button
               onPress={() => this.onSubmit()}>
               Войти
             </Button>
-            <SocialView type={2} theme={theme} navigation={navigation}  subTitle={'Зарегистрироваться'} />
+          </TouchableOpacity>
+
+
+
+
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -205,20 +253,43 @@ export default connect(mapStateToProps)(loginScreen);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:"rgba(208,205,205,0.75)",
-    borderRadius: 20,
-    padding: 40
+    backgroundColor:"#982c2c",
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(80),
+
+    width: PixelRatio.getPixelSizeForLayoutSize(201),
+    height: PixelRatio.getPixelSizeForLayoutSize(400),
+    left: PixelRatio.roundToNearestPixel(-20),
+    borderTopEndRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomLeftRadius: PixelRatio.getPixelSizeForLayoutSize(65),
+    borderBottomRightRadius: PixelRatio.getPixelSizeForLayoutSize(100),
+    top: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopStartRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(40),
+    marginBottom: PixelRatio.getPixelSizeForLayoutSize(22),
+    marginVertical: PixelRatio.getPixelSizeForLayoutSize(-17),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(500),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    marginLeft:PixelRatio.getPixelSizeForLayoutSize(13)
+
+
+
+
+
 
 
   },
+
   innerViewContainer: {
+
     flex: 1,
-    padding: 10,
-    paddingTop: -25,
-    backgroundColor: '#bcbec0',
-    borderRadius: PixelRatio.getPixelSizeForLayoutSize(20),
-    height: 40
-  },
+    position: 'absolute',
+    borderColor:'#1a5c9d'
+
+
+
+},
   forgotView: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -238,6 +309,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
+
   loginButton: {
     marginTop: 20,
     height: 46,
@@ -258,8 +330,142 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   button_style: {
-    backgroundColor: 'rgba(206,21,21,0.83)',
+    backgroundColor: '#ffffff',
     borderRadius: PixelRatio.getPixelSizeForLayoutSize(35),
     shadowColor: rgbaColor(144,166,187,0.5)
+  },
+  text_input_1: {
+    justifyContent: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(67),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(5),
+
+  },
+  text_input_2: {
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(129),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+
+
+  },
+  enter: {
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 340,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:11,
+    shadowColor: 'rgba(255,255,255,0.94)',
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+
+
+
+  },
+  placeholder: {
+    textAlign: 'center',
+    shadowOffset: {
+      width:PixelRatio.getPixelSizeForLayoutSize(7.911129),
+      height:PixelRatio.getPixelSizeForLayoutSize(15.8226),
+      transform: 'matrix(1, 0, 0, -1, 0, 0)'
+    }
+
+  },
+  gradient: {
+    flex: 1,
+    justifyContent:'center'
+  },
+  forgot_button: {
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 505,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(150),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:0,
+    shadowColor: 'rgba(255, 255, 255, 0.3)',
+    left: PixelRatio.getPixelSizeForLayoutSize(89),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(-66),
+    height: PixelRatio.getPixelSizeForLayoutSize(29.1)
+
+
+  },
+  register_button: {
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 420,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(170),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:21,
+    shadowColor: 'rgba(255, 255, 255, 0.3)',
+    left: PixelRatio.getPixelSizeForLayoutSize(30),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(-17),
+    height: PixelRatio.getPixelSizeForLayoutSize(29.1)
+
+  },
+  exit: {
+    top:PixelRatio.getPixelSizeForLayoutSize(5),
+    left: PixelRatio.getPixelSizeForLayoutSize(6.5)
+
+  },
+
+  circle: {
+    width: PixelRatio.getPixelSizeForLayoutSize(12),
+    height: PixelRatio.getPixelSizeForLayoutSize(10),
+    backgroundColor: '#FFFFFF',
+    borderRadius: 60,
+    left: 16,
+    right: -29,
+    top: -4,
+    bottom: '60.19%',
+    alignItems: 'center',
+
+  },
+  kr_button: {
+    width: 60,
+    height: 50,
+    left: 10
+
   }
+
+
+
 });

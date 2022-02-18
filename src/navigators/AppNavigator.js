@@ -58,18 +58,20 @@ const width_proportion = '50%'
 
 const loginNavigationOption = (theme, navigationVisible) => {
     return {
-        headerShown: navigationVisible,
+        headerShown: false,
         headerBackTitleVisible: false,
         headerBackImage: () => {
             return <FastImage style={styleBack} source={theme.icons.back}/>
         },
         headerTintColor: theme.container.headerTextColor,
         headerStyle: {
-            backgroundColor: theme.container.backgroundColor,
+            backgroundColor: '#bcbec0',
             shadowOpacity: 0,
             shadowOffset: {height: 0, width: 0},
             shadowRadius: 0,
-            elevation: 0
+            elevation: 0,
+            borderRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+            borderTopLeftRadius: 2,
         },
     }
 };
@@ -247,6 +249,7 @@ class AppNavigator extends React.PureComponent {
 
       <NavigationContainer>
 
+
           {
               user === null
                   ? <RootStack.Navigator screenOptions={loginNavigationOption(theme, navigationVisible)}>
@@ -258,14 +261,15 @@ class AppNavigator extends React.PureComponent {
 
                   : <Tab.Navigator initialRouteName="Home"
                                    screenOptions={{
-                                       headerShown: false
+                                       headerShown: false,
+                                       cardStyle : { backgroundColor : 'lightgray', margin : 10 }
                                    }}
                                    barStyle = {{marginLeft: -100, marginRight: 0,
                                        shadowColor: 'rgba(11,12,12,0.5)'
 
                                    }}
                                    tabBarOptions={{
-                                       borderColor: '#ad1313',
+                                       borderColor: '#7a7373',
                                        style: {
                                            headerShown: false,
                                            position: 'absolute',
@@ -282,7 +286,7 @@ class AppNavigator extends React.PureComponent {
                                            },
                                            box: {
                                                shadowColor: 'black',
-                                               backgroundColor: '#c92323',
+                                               backgroundColor: '#645c5c',
 
                                            },
 
@@ -316,6 +320,7 @@ class AppNavigator extends React.PureComponent {
 
                                            },
                                            borderColor: '#ad1313',
+                                           cardStyle : { backgroundColor : 'lightgray', margin : 15 }
 
                                        }
                                    }
@@ -382,10 +387,10 @@ export default connect(mapStateToProps)(AppNavigator);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+
+
+
+
   },
   paragraph: {
     margin: 24,

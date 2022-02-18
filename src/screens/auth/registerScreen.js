@@ -1,5 +1,5 @@
 import React, {Component, useState } from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView, Text, PixelRatio, TouchableOpacity} from 'react-native';
 import {TextField} from 'react-native-material-textfield';
 import Feather from 'react-native-vector-icons/Feather';
 import Button from '../../components/general/Button';
@@ -9,6 +9,7 @@ import SocialView from '../../components/general/SocialView';
 import Title from '../../components/general/Title';
 import {regex} from '../../utils/regex';
 import DatePicker from './DatePicker';
+import {TextInput} from 'react-native';
 
 let formField = ['email', 'password', 'login', 'number', 'date'];
 
@@ -138,9 +139,12 @@ class registerScreen extends Component {
         <ScrollView
           contentContainerStyle={styles.innerViewContainer}
           scrollEnabled={true}>
+
+
           <View style={styles.innerViewContainer}>
-            <Title theme={theme} title={'Зарегистироваться'} />
-            <TextField
+
+            <TextInput
+                style = {styles.text_input_1}
                 ref={this.emailRef}
                 textColor={theme.primaryColor}
                 tintColor={theme.primaryColor}
@@ -157,8 +161,10 @@ class registerScreen extends Component {
                 returnKeyType="next"
                 label="Имя пользователя"
                 error={errors.email}
+                placeholder={'Имя пользователя'}
             />
-            <TextField
+            <TextInput
+                style = {styles.text_input_2}
                 ref={this.emailRef}
                 textColor={theme.primaryColor}
                 tintColor={theme.primaryColor}
@@ -175,8 +181,10 @@ class registerScreen extends Component {
                 returnKeyType="next"
                 label="Логин"
                 error={errors.email}
+                placeholder={'Логин'}
             />
-            <TextField
+            <TextInput
+                style = {styles.text_input_3}
                 ref={this.emailRef}
                 textColor={theme.primaryColor}
                 tintColor={theme.primaryColor}
@@ -194,15 +202,10 @@ class registerScreen extends Component {
                 label="Номер телефона:
                         +7 (XXX) XXXXXXX"
                 error={errors.email}
-            />
-          <DatePicker
-
-          />
-
-
-
-
-            <TextField
+                placeholder={"Номер телефона"}
+                />
+            <TextInput
+                style = {styles.text_input_4}
                 ref={this.passwordRef}
                 textColor={theme.primaryColor}
                 tintColor={theme.primaryColor}
@@ -221,32 +224,20 @@ class registerScreen extends Component {
                 label="Пароль"
                 error={errors.password}
                 renderRightAccessory={this.renderPasswordAccessory}
+                placeholder={'Пароль'}
             />
 
             <View style={styles.signUpView}>
-              <Text style={[styles.signUpText, {color: theme.secondaryColor}]}>
-                Регистрируясь вы принимает правила нашего приложения
-              </Text>
+
             </View>
+          <TouchableOpacity style = {styles.register_button}>
             <Button
-              style={{fontSize: 15, color: White}}
-              containerStyle={[
-                styles.loginButton,
-                {backgroundColor: 'rgba(190,215,215,0.1)',
-                  shadowColor: 'rgba(55,124,185,0.5)',
-                  shadowOpacity: PixelRatio.getPixelSizeForLayoutSize(7.91129),
-                  borders: 'rgba(213,17,17,0.2)'},
-              ]}
               onPress={() => this.onSubmit()}>
               Зарегистрироваться
             </Button>
-            <SocialView
-              type={1}
-              theme={theme}
-              navigation={navigation}
-              title={'Ваш аккаунт существует?'}
-              subTitle={'Войти'}
-            />
+          </TouchableOpacity>
+
+
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -263,6 +254,18 @@ export default connect(mapStateToProps)(registerScreen);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:"#0c4b8a",
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(80),
+
+    width: PixelRatio.getPixelSizeForLayoutSize(195),
+    height: PixelRatio.getPixelSizeForLayoutSize(500),
+    top: PixelRatio.getPixelSizeForLayoutSize(3),
+    left: PixelRatio.roundToNearestPixel(10),
+    borderTopEndRadius: PixelRatio.getPixelSizeForLayoutSize(30),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(30),
+    borderBottomLeftRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+    borderBottomRightRadius: PixelRatio.getPixelSizeForLayoutSize(45),
+
   },
   innerViewContainer: {
     // flex: 1,
@@ -295,5 +298,88 @@ const styles = StyleSheet.create({
   socialText: {
     fontSize: 12,
     fontWeight: '600',
+  },
+  text_input_1: {
+    justifyContent: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(29),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(70),
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+  },
+  text_input_2: {
+    justifyContent: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(29),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(113),
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+  },
+  text_input_3: {
+    justifyContent: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(29),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(157),
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+  },
+  text_input_4: {
+    justifyContent: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(29),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(203),
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+  },
+  register_button: {
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 510,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:11,
+    shadowColor: 'rgba(255, 255, 255, 0.3)',
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+
+
   },
 });
