@@ -21,15 +21,15 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - libwebp (1.2.0):
-    - libwebp/demux (= 1.2.0)
-    - libwebp/mux (= 1.2.0)
-    - libwebp/webp (= 1.2.0)
-  - libwebp/demux (1.2.0):
+  - libwebp (1.2.1):
+    - libwebp/demux (= 1.2.1)
+    - libwebp/mux (= 1.2.1)
+    - libwebp/webp (= 1.2.1)
+  - libwebp/demux (1.2.1):
     - libwebp/webp
-  - libwebp/mux (1.2.0):
+  - libwebp/mux (1.2.1):
     - libwebp/demux
-  - libwebp/webp (1.2.0)
+  - libwebp/webp (1.2.1)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -324,13 +324,13 @@ PODS:
     - React
   - RNVectorIcons (8.1.0):
     - React-Core
-  - SDWebImage (5.11.0):
-    - SDWebImage/Core (= 5.11.0)
-  - SDWebImage/Core (5.11.0)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
   - SDWebImageWebPCoder (0.6.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.7)
-  - TOCropViewController (2.6.0)
+  - TOCropViewController (2.6.1)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -470,12 +470,12 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
-  DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
+  DoubleConversion: cde416483dac037923206447da6e1454df403714
   FBLazyVector: 3bb422f41b18121b71783a905c10e58606f7dc3e
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
-  glog: 85ecdd10ee8d8ec362ef519a6a45ff9aa27b2e85
-  libwebp: e90b9c01d99205d03b6bb8f2c8c415e5a4ef66f0
+  glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -509,11 +509,11 @@ SPEC CHECKSUMS:
   RNScreens: e8e8dd0588b5da0ab57dcca76ab9b2d8987757e0
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
-  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
-  TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: 0f7e40443b6f3948208103bab239d5e1f0d59648
+PODFILE CHECKSUM: 6df2ba678f56c7400cd59475c4d5f45a49a82ce9
 
 COCOAPODS: 1.11.2

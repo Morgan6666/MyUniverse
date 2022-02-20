@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Instahood.app"
-               BlueprintName = "Instahood"
-               ReferencedContainer = "container:Instahood.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "InstahoodTests.xctest"
-               BlueprintName = "InstahoodTests"
+               BlueprintIdentifier = "D0AEBC0D27C12DF100D97BBE"
+               BuildableName = "Universe.app"
+               BlueprintName = "Universe (iOS)"
                ReferencedContainer = "container:Instahood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "InstahoodTests.xctest"
-               BlueprintName = "InstahoodTests"
+               BlueprintIdentifier = "D0AEBC1927C12DF100D97BBE"
+               BuildableName = "Tests iOS.xctest"
+               BlueprintName = "Tests iOS"
                ReferencedContainer = "container:Instahood.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +44,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "ru"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -69,9 +54,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Instahood.app"
-            BlueprintName = "Instahood"
+            BlueprintIdentifier = "D0AEBC0D27C12DF100D97BBE"
+            BuildableName = "Universe.app"
+            BlueprintName = "Universe (iOS)"
             ReferencedContainer = "container:Instahood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -86,9 +71,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Instahood.app"
-            BlueprintName = "Instahood"
+            BlueprintIdentifier = "D0AEBC0D27C12DF100D97BBE"
+            BuildableName = "Universe.app"
+            BlueprintName = "Universe (iOS)"
             ReferencedContainer = "container:Instahood.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

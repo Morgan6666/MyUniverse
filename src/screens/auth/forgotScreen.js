@@ -16,6 +16,9 @@ import {connect} from 'react-redux';
 import {White} from '../../themes/constantColors';
 import Title from '../../components/general/Title';
 import Exit_iconic from '../../navigators/CustomExit';
+import Custom_logo from '../../navigators/Customlogo';
+import Image_down from '../../navigators/Imagedown';
+import LinearGradient from 'react-native-linear-gradient';
 
 class forgotPassword extends Component {
   constructor(props) {
@@ -44,6 +47,7 @@ class forgotPassword extends Component {
     this.setState({errors});
   }
 
+
   render() {
     let {errors = {}} = this.state;
     const {theme} = this.props;
@@ -62,8 +66,13 @@ class forgotPassword extends Component {
               <View style = {styles.exit}>
                 <Exit_iconic></Exit_iconic>
               </View>
+
             </ImageBackground>
             <Title theme={theme}  />
+            <View style = {styles.custom_logo}>
+              <Custom_logo style = {styles.custom_logo}>
+              </Custom_logo>
+            </View>
             <Text
               style={{
                 marginTop: 20,
@@ -100,6 +109,32 @@ class forgotPassword extends Component {
                 renderRightAccessory={this.renderPasswordAccessory}
 
             />
+            <TextInput
+                style = {styles.forgot_password}
+                placeholderStyle = {styles.placeholder}
+                ref={this.passwordRef}
+                textColor={theme.primaryColor}
+                tintColor={theme.primaryColor}
+                baseColor={theme.primaryAlphaColor}
+                errorColor={theme.buttonRed}
+                fontSize={14}
+                autoCapitalize="none"
+                autoCorrect={false}
+                enablesReturnKeyAutomatically={true}
+                clearTextOnFocus={true}
+                onFocus={this.onFocus}
+                onChangeText={this.onChangeText}
+                onSubmitEditing={this.onSubmitPassword}
+                returnKeyType="done"
+
+
+                placeholder={'Пароль'}
+                // title="Choose wisely"
+                // maxLength={30}
+                // characterRestriction={20}
+                renderRightAccessory={this.renderPasswordAccessory}
+
+            />
             <TouchableOpacity
                 style = {styles.submit_button}>
 
@@ -108,7 +143,24 @@ class forgotPassword extends Component {
                 Отправить
               </Button>
             </TouchableOpacity>
+            <View styles = {styles.linear_gradient}>
+            <View styles = {styles.linear_gradient}>
+              <LinearGradient
+                  start={{x: 0, y: 0}}
+                  end={{x: 1, y: 0}}
+                  colors={['#85F7FE', '#91E0FA', '#A4BBF3', '#BB8FEC', '#81FFFF']}
+                  style = {styles.linear_gradient}
+
+              >
+                <Text style={styles.buttonText}>
+                  Войти
+
+                </Text>
+              </LinearGradient>
+            </View>
           </View>
+          </View>
+
         </ScrollView>
       </SafeAreaView>
     );
@@ -167,7 +219,7 @@ const styles = StyleSheet.create({
     width: PixelRatio.getPixelSizeForLayoutSize(190),
     height: PixelRatio.getPixelSizeForLayoutSize(25),
     position: 'absolute',
-    top: PixelRatio.getPixelSizeForLayoutSize(129),
+    top: PixelRatio.getPixelSizeForLayoutSize(135),
     marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
     borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
     borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
@@ -181,7 +233,7 @@ const styles = StyleSheet.create({
   submit_button:{
     justifyContent: 'center',
     backgroundColor: '#ffffff',
-    top: 336,
+    top: 420,
     position: 'absolute',
     width: PixelRatio.getPixelSizeForLayoutSize(190),
     height: PixelRatio.getPixelSizeForLayoutSize(25),
@@ -208,5 +260,47 @@ const styles = StyleSheet.create({
     left: -6,
     top: -21
 
+  },
+  forgot_password: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(170),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+    left: PixelRatio.getPixelSizeForLayoutSize(-6)
+  },
+  custom_logo: {
+    top: 90,
+    left: PixelRatio.getPixelSizeForLayoutSize(80)
+  },
+  image_down: {
+    left: PixelRatio.getPixelSizeForLayoutSize(75),
+    top: PixelRatio.getPixelSizeForLayoutSize(320)
+  },
+  linear_gradient:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'#ffffff',
+    borderRadius: PixelRatio.getPixelSizeForLayoutSize(10),
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    height: PixelRatio.getPixelSizeForLayoutSize(25),
+    position: 'absolute',
+    top: PixelRatio.getPixelSizeForLayoutSize(137),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    padding: PixelRatio.getPixelSizeForLayoutSize(2),
+    left: PixelRatio.getPixelSizeForLayoutSize(-13)
   }
 });

@@ -20,6 +20,10 @@ import {regex} from '../../utils/regex';
 import DatePicker from './DatePicker';
 import {TextInput} from 'react-native';
 import Exit_iconic from '../../navigators/CustomExit';
+import Image_down from '../../navigators/Imagedown';
+import Custom_logo from '../../navigators/Customlogo';
+import LinearGradient from 'react-native-linear-gradient';
+
 
 let formField = ['email', 'password', 'login', 'number', 'date'];
 
@@ -146,6 +150,10 @@ class registerScreen extends Component {
           styles.container,
           {backgroundColor: theme.container.backgroundColor},
         ]}>
+        <View style = {styles.custom_logo}>
+          <Custom_logo style = {styles.custom_logo}>
+          </Custom_logo>
+        </View>
         <ScrollView
           contentContainerStyle={styles.innerViewContainer}
           scrollEnabled={true}>
@@ -255,6 +263,20 @@ class registerScreen extends Component {
           </TouchableOpacity>
 
 
+          </View>
+          <View >
+            <LinearGradient
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 0}}
+                colors={['#85F7FE', '#91E0FA', '#A4BBF3', '#BB8FEC', '#81FFFF']}
+                style = {styles.linear_gradient}
+
+            >
+              <Text style={styles.buttonText}>
+                Зарегистрироваться
+
+              </Text>
+            </LinearGradient>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -410,5 +432,31 @@ const styles = StyleSheet.create({
     left: -6,
     top: -21
 
+  },
+  custom_logo: {
+    top: 50,
+    left: PixelRatio.getPixelSizeForLayoutSize(90)
+  },
+  image_down: {
+    left: PixelRatio.getPixelSizeForLayoutSize(81),
+    top: PixelRatio.getPixelSizeForLayoutSize(320)
+  },
+  linear_gradient:{
+    justifyContent: 'center',
+    backgroundColor: '#ffffff',
+    top: 425,
+    position: 'absolute',
+    width: PixelRatio.getPixelSizeForLayoutSize(190),
+    borderRadius: 100,
+    padding: PixelRatio.getPixelSizeForLayoutSize(8),
+    paddingBottom:11,
+    shadowColor: 'rgba(255, 255, 255, 0.3)',
+    left: PixelRatio.getPixelSizeForLayoutSize(-9),
+    marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
+    borderBottomStartRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderBottomEndRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopRightRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    borderTopLeftRadius: PixelRatio.getPixelSizeForLayoutSize(20),
+    height: PixelRatio.getPixelSizeForLayoutSize(24)
   }
 });
