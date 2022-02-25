@@ -27,7 +27,6 @@ import Custom_logo from '../../navigators/Customlogo';
 import LinearGradient from 'react-native-linear-gradient';
 
 
-let formField = ['email', 'password', 'login', 'number', 'date'];
 
 class loginScreen extends Component {
   constructor(props) {
@@ -85,7 +84,7 @@ class loginScreen extends Component {
 
   onSubmitPassword() {
     this.password.blur();
-    this.onSubmit();
+
   }
 
   onAccessoryPress() {
